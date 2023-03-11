@@ -1,7 +1,7 @@
 
  /* File Array_Func.h */
-#ifndef Array_Func_H
-#define Array_Func_H
+#ifndef _Array_Func_H_
+#define _Array_Func_H_
 
 void Show_Array_RL(int arr[], int size);
 
