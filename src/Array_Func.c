@@ -2,7 +2,7 @@
 #include "Array_Func.h"
 
 void Show_Array_RL(int arr[], int size) {
-    for (int i=size; i>1; i--){
+    for (int i=size-1; i>=0; i--){
         printf ("%d " , arr[i]);
     }
 };
