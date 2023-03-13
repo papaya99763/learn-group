@@ -1,3 +1,4 @@
+// Demo program
 #include <stdio.h>
 #include "../src/list.h"
 
