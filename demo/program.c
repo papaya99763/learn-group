@@ -13,6 +13,7 @@ int main(void) {
     printf("\n");
     
     Show_Invert(arr, 10);
+    printf("\n");
 
     return 0;
 }

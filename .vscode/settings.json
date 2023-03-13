@@ -1,6 +1,6 @@
 {
     "code-runner.executorMap": {
-        "c": "$workspaceRoot/SCM/build.bat $dir"
+        "c": "$workspaceRoot/SCM/build.bat $dir $fileName $fileNameWithoutExt"
         //"c": "cd $dir../SCM && build.bat"
         //"c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
     },
