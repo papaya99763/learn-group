@@ -42,8 +42,8 @@ SET dir_lib=%~dp0..\src
 SET library=
 SET library=%library% %dir_lib%\list.c
 ECHO [lib-build]: list.c
-REM SET library=%library% %dir_lib%\list.c
-REM ECHO [lib-build]: list.c
+SET library=%library% %dir_lib%\string.c
+ECHO [lib-build]: string.c
 
 REM Develop of Project
 if %target%==%demo% (
