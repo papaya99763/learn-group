@@ -1,6 +1,7 @@
 // Demo program
 #include <stdio.h>
 #include "../src/list.h"
+#include "../src/string.h"
 
 int main(void) {
     
@@ -15,6 +16,9 @@ int main(void) {
     
     Show_Invert(arr, 10);
     printf("\n");
+
+    char str[] = { "Test: ToString\n" };
+    ToString(str);
 
     return 0;
 }
