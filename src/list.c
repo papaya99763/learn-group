@@ -27,7 +27,15 @@ bool At(int arr[], int size, int idx, int *result) {
 }
 
 bool Find(int arr[], int size, int value, int *result) {
-    // todo: 
+
+    //Argument Checking
+    for( int i = 0; i < size ; i++){
+        if(value == arr[i] ) {
+            *result = i;
+            return true;
+        }
+    }
+    *result = -1 ;
     return false;
 }
 
