@@ -20,8 +20,8 @@ int main(void) {
 
     int result, idx = 6;
     if(At(arr, SIZE, idx, &result) == true) {
-        printf("  Actual: At(arr, 10, %d) = %d\n", idx, result);    // actual
-        printf("Expected: arr[%d] = %d\n", idx, result);            // expected
+        printf("  Actual: At(arr, %d, %d) = %d\n", SIZE, idx, result);      // actual
+        printf("Expected: arr[%d] = %d\n", idx, result);                    // expected
     }
 
     puts("\n");
