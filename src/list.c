@@ -13,9 +13,17 @@ void Show_Invert(int arr[], int size) {
     }
 }
 
-int At(int arr[], int size, int idx) {
-    // todo: 
-    return -1;
+bool At(int arr[], int size, int idx, int *result) {
+    
+    // Argument Checking
+    if(idx < 0 || idx >= size) {
+        printf("|> Error: Index out of range\n");
+        *result = -1;
+        return false;
+    }
+    
+    *result = arr[idx];
+    return true;
 }
 
 bool Find(int arr[], int size, int value, int *result) {

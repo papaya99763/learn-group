@@ -11,7 +11,7 @@ void Show_Sequence(int arr[], int size);
 
 void Show_Invert(int arr[], int size);
 
-int At(int arr[], int size, int idx);
+bool At(int arr[], int size, int idx, int *result);
 
 bool Find(int arr[], int size, int value, int *result);
 
