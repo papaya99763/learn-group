@@ -3,22 +3,29 @@
 #include "../src/list.h"
 #include "../src/string.h"
 
+#define SIZE 10
+
 int main(void) {
     
-    int arr[10];
-    for (int i = 0; i < 10; i++) {
+    int arr[SIZE];
+    for (int i = 0; i < SIZE; i++) {
         arr[i] = i;
     }
     
     // For Test
-    Show_Sequence(arr, 10);
+    Show_Sequence(arr, SIZE);
     printf("\n");
     
-    Show_Invert(arr, 10);
+    Show_Invert(arr, SIZE);
     printf("\n");
 
-    char str[] = { "Test: ToString\n" };
-    ToString(str);
+    int result, idx = 6;
+    if(At(arr, SIZE, idx, &result) == true) {
+        printf("  Actual: At(arr, %d, %d) = %d\n", SIZE, idx, result);      // actual
+        printf("Expected: arr[%d] = %d\n", idx, result);                    // expected
+    }
 
+    puts("\n");
+    puts("===================================");
     return 0;
 }
