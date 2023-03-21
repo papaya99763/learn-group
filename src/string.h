@@ -7,14 +7,16 @@
 #define true 1
 #define false 0
 
-void ToString(char str[]);
+int String_Size(char str[]);
 
-int Size(char str[]);
+int String_Length(char str[]);
 
-int Length(char str[]);
+bool String_Find(char str[], char word[], int *result);
 
-bool Find(char str[], char word[], int *result);
+int String_Count(char str[], char word[]);
 
-int Count(char str[], char word[]);
+char* String_ToChar(const char str[]);
+
+char* String_ToString(const char str[]);
 
 #endif /* string.h */
