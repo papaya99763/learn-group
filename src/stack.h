@@ -2,9 +2,7 @@
 #ifndef STACK_H
 #define STACK_H
 
-#define bool int
-#define true 1
-#define false 0
+#include "../src/globalDef.hpp"
 
 struct Stack {
     int top;

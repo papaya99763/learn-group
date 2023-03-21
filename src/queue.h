@@ -2,9 +2,7 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
-#define bool int
-#define true 1
-#define false 0
+#include "../src/globalDef.hpp"
 
 struct Queue {
     int top;

@@ -2,9 +2,7 @@
 #ifndef XUNIT_H
 #define XUNIT_H
 
-#define bool int
-#define true 1
-#define false 0
+#include "../src/globalDef.hpp"
 
 bool XUnit_Assert_Int(int expected, int actual) {
     return (expected == actual);
