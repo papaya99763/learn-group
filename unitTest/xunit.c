@@ -1,5 +1,9 @@
 #include <stdio.h>
-#include "xunit.hpp"
+#include "xunit.h"
+
+bool XUnit_Assert_Int(int expected, int actual) {
+    return (expected == actual);
+}
 
 bool XUnit_Assert_IntArray(int expected[], int actual[], int size) {
     // todo:

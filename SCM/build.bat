@@ -53,6 +53,15 @@ ECHO [lib-build]: queue.c
 SET library=%library% %dir_lib%\stack.c
 ECHO [lib-build]: stack.c
 
+SET library=%library% %dir_lib%\globalDef.hpp
+ECHO [lib-build]: globalDef.hpp
+SET library=%library% %dir_lib%\globalLib.hpp
+ECHO [lib-build]: globalLib.hpp
+
+SET dir_unitTest=%~dp0..\unitTest
+SET library=%library% %dir_unitTest%\xunit.c
+ECHO [lib-build]: xunit.c
+
 REM Develop of Project
 if %target%==%demo% (
     SET build=demo

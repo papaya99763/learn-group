@@ -10,7 +10,5 @@ int main(void) {
         arr[i] = i;
     }
 
-    printf("For your test\n");
-
     return 0;
 }

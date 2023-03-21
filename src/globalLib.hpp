@@ -16,6 +16,6 @@
 #include "stack.h"
 
 // Unit Test
-#include "../unitTest/xunit.hpp"
+#include "../unitTest/xunit.h"
 
 #endif /* globalLib.h */
