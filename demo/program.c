@@ -12,20 +12,7 @@ int main(void) {
         arr[i] = i;
     }
     
-    // For Test
-    Show_Sequence(arr, SIZE);
-    printf("\n");
-    
-    Show_Invert(arr, SIZE);
-    printf("\n");
+    printf("For your test\n");
 
-    int result, idx = 6;
-    if(At(arr, SIZE, idx, &result) == true) {
-        printf("  Actual: At(arr, %d, %d) = %d\n", SIZE, idx, result);      // actual
-        printf("Expected: arr[%d] = %d\n", idx, result);                    // expected
-    }
-
-    puts("\n");
-    puts("===================================");
     return 0;
 }
