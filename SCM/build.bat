@@ -44,6 +44,10 @@ SET library=%library% %dir_lib%\list.c
 ECHO [lib-build]: list.c
 SET library=%library% %dir_lib%\string.c
 ECHO [lib-build]: string.c
+SET library=%library% %dir_lib%\queue.c
+ECHO [lib-build]: queue.c
+SET library=%library% %dir_lib%\stack.c
+ECHO [lib-build]: stack.c
 
 REM Develop of Project
 if %target%==%demo% (
