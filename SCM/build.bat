@@ -78,6 +78,8 @@ if Not exist %dir_dev%\%build% (
 CD %dir_dev%\%build%
 
 REM Compile
+ECHO.
+ECHO Building ...
 gcc %tgt_build% %library% -o %tgt_name%
 
 ECHO.
