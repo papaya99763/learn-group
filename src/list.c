@@ -1,5 +1,34 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include "list.h"
+
+void List_Show(int arr[], int size, enum Direction dir) {
+    enum Direction v = Vertical;
+    enum Direction h = Horizontal;
+
+    if(dir == v) {
+        for (int i = 0; i < size; i++) {
+            printf("Arr[%d] = %d\n", i, arr[i]);
+        }
+    }
+    else if (dir == h) {
+        printf("Arr[]: ");
+        for (int i = 0; i < size; i++) {
+            printf("%d ", arr[i]);
+        }
+    }
+
+    puts("\n");
+}
+
+void List_Init(int arr[], int size, int defaultValue) {
+    // todo:
+}
+
+void List_Clear(int arr[], int size) {
+    return List_Init(arr, size, 0);
+}
 
 void Show_Sequence(int arr[], int size) {
     for (int i = size-1; i>=0; i--) {
@@ -74,4 +103,11 @@ bool Join(int ori[], int ori_size, int join[], int join_size) {
 bool Sort(int arr[], int size, int type) {
     // todo: 
     return false;
+}
+
+void RandList(int arr[], int size, int min, int max) {
+    srand(time(NULL));
+    for (int i = 0; i < size; i++) {
+        arr[i] = rand() % (max+1) + min;
+    }
 }
