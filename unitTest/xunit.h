@@ -1,8 +1,12 @@
+// 單元測試方法(函數宣告)
+
 /* File xunit.h */
 #ifndef XUNIT_H
 #define XUNIT_H
 
 #include "../src/globalDef.hpp"
+
+#define XUnit(bool) ((bool == 1) ? "Pass" : "Fail")
 
 bool XUnit_Assert_Int(int expected, int actual);
 
