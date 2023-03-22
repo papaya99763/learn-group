@@ -12,6 +12,8 @@ bool XUnit_Assert_Int(int expected, int actual);
 
 bool XUnit_Assert_IntArray(int expected[], int actual[], int size);
 
+bool XUnit_Assert_Char(char expected[], char actual[], int size);
+
 bool XUnit_Assert_String(char expected[], char actual[]);
 
 void XUnit_Sample();

@@ -15,6 +15,16 @@ bool XUnit_Assert_IntArray(int expected[], int actual[], int size) {
     return true;
 }
 
+bool XUnit_Assert_Char(char expected[], char actual[], int size) {
+    for (int i = 0; i < size; i++) {
+        if(expected[i] != actual[i]) {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
 bool XUnit_Assert_String(char expected[], char actual[]) {
     int idx = 0;
     while(expected[idx] != '\0') {
