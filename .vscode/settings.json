@@ -8,9 +8,10 @@
         "list.h": "c",
         "globallib.hpp": "c",
         "globaldef.hpp": "c",
-        "xunit.hpp": "c",
+        "xunit.h": "c",
         "stack.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "string.h": "c"
     }
 
 }
