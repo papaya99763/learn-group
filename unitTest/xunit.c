@@ -52,6 +52,6 @@ void XUnit_Sample() {
 
     char strT1[] = "Hello world!";
     char strT2[] = "Hello";
-    printf("IntArray: %s\n", XUnit(XUnit_Assert_String(strT1, strT2)));
+    printf("String: %s\n", XUnit(XUnit_Assert_String(strT1, strT2)));
 
 }
