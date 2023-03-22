@@ -3,9 +3,7 @@
 #ifndef LIST_H
 #define LIST_H
 
-#define bool int
-#define true 1
-#define false 0
+#include "../src/globalDef.hpp"
 
 void Show_Sequence(int arr[], int size);
 
