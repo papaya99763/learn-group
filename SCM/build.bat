@@ -81,29 +81,40 @@ REM Compile
 ECHO.
 ECHO Building ...
 gcc %tgt_build% %library% -o %tgt_name%
+SET errCode=%ERRORLEVEL%
+if %errCode% EQU 0 (
+    ECHO.
+    ECHO ========= [Build Success] =========
+    ECHO ***********************************
+    ECHO.
+) else (
+    ECHO.
+    ECHO =========  [Build Fail] ===========
+    ECHO ***********************************
+    ECHO.
+    goto :End
+)
 
-ECHO.
-ECHO ========= [Build Success] =========
-ECHO ***********************************
-ECHO.
-
+:Start_Program
+::**************************************
 ECHO [%target%]: Start
 ECHO -----------------------------------
 ECHO.
-REM Execute the program
 %tgt_name%.exe
 ECHO.
 ECHO -----------------------------------
-
 SET errCode=%ERRORLEVEL%
 SET errStr=
-if %errCode% EQU 0 ( SET errStr=NoError
-) else ( SET errStr=Error)
+if %errCode% EQU 0 ( 
+    ECHO "Program Return: %errCode%  ( NoError )"
+    ECHO.
+) else (
+    ECHO "Program Return: %errCode% ( Error )"
+    ECHO.
+    goto :End
+)
 
-ECHO Program Return: %errCode% ( %errStr% )
-ECHO.
+:End
+::**************************************
 ECHO * End of run ...
 ECHO.
-
-:end
-
