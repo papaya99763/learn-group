@@ -1,14 +1,18 @@
-ECHO Off
+@ECHO Off
 
 ECHO.
-ECHO Start to build
-ECHO ===================================
+ECHO ***********************************
+ECHO          [Start To Build]         
+ECHO ***********************************
+ECHO.
+
+ECHO 1. Check Arguments
+ECHO -----------------------------------
 SET dir_caller=%1
 SET target=%2
 SET tgt_name=%3
 ECHO [Main-Program]: "%target%"
 ECHO [Build-From]:   %dir_caller%
-
 
 REM Project
 SET dir_workspace=%~dp0..
@@ -33,17 +37,30 @@ if %target%==%demo% (
     SET tgt_build=%dir_main%\%main%
 )
 ECHO [Build-To]:     "%tgt_build%"
-ECHO.
-
-REM ====================================
 
 REM Target: Library
+ECHO.
+ECHO 2. Build library
+ECHO -----------------------------------
 SET dir_lib=%~dp0..\src
 SET library=
 SET library=%library% %dir_lib%\list.c
 ECHO [lib-build]: list.c
-REM SET library=%library% %dir_lib%\list.c
-REM ECHO [lib-build]: list.c
+SET library=%library% %dir_lib%\string.c
+ECHO [lib-build]: string.c
+SET library=%library% %dir_lib%\queue.c
+ECHO [lib-build]: queue.c
+SET library=%library% %dir_lib%\stack.c
+ECHO [lib-build]: stack.c
+
+SET library=%library% %dir_lib%\globalDef.hpp
+ECHO [lib-build]: globalDef.hpp
+SET library=%library% %dir_lib%\globalLib.hpp
+ECHO [lib-build]: globalLib.hpp
+
+SET dir_unitTest=%~dp0..\unitTest
+SET library=%library% %dir_unitTest%\xunit.c
+ECHO [lib-build]: xunit.c
 
 REM Develop of Project
 if %target%==%demo% (
@@ -61,9 +78,43 @@ if Not exist %dir_dev%\%build% (
 CD %dir_dev%\%build%
 
 REM Compile
+ECHO.
+ECHO Building ...
 gcc %tgt_build% %library% -o %tgt_name%
+SET errCode=%ERRORLEVEL%
+if %errCode% EQU 0 (
+    ECHO.
+    ECHO ========= [Build Success] =========
+    ECHO ***********************************
+    ECHO.
+) else (
+    ECHO.
+    ECHO =========  [Build Fail] ===========
+    ECHO ***********************************
+    ECHO.
+    goto :End
+)
 
-REM Execute the program
+:Start_Program
+::**************************************
+ECHO [%target%]: Start
+ECHO -----------------------------------
+ECHO.
 %tgt_name%.exe
+ECHO.
+ECHO -----------------------------------
+SET errCode=%ERRORLEVEL%
+SET errStr=
+if %errCode% EQU 0 ( 
+    ECHO "Program Return: %errCode%  ( NoError )"
+    ECHO.
+) else (
+    ECHO "Program Return: %errCode% ( Error )"
+    ECHO.
+    goto :End
+)
 
-:end
+:End
+::**************************************
+ECHO * End of run ...
+ECHO.
