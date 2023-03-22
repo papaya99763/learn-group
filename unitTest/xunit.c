@@ -26,3 +26,22 @@ bool XUnit_Assert_String(char expected[], char actual[]) {
     
     return true;
 }
+
+void XUnit_Sample() {
+
+    // Test exchange t1 and t2's value
+    int t1 = 10;
+    int t2 = 5;
+    int tmp;
+    SWAP(t1, t2, tmp);
+    printf("Int: %s\n", XUnit(XUnit_Assert_Int(t1, 5))); // We expected t1 equ to 5
+
+    int arrT1[] = { 0, 1, 2, 3, 4, 5 };
+    int arrT2[] = { 0, 1, 2, 3, 4, 5 };
+    printf("IntArray: %s\n", XUnit(XUnit_Assert_IntArray(arrT1, arrT2, 6)));
+
+    char strT1[] = "Hello world!";
+    char strT2[] = "Hello";
+    printf("IntArray: %s\n", XUnit(XUnit_Assert_String(strT1, strT2)));
+
+}
