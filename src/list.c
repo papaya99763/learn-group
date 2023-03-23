@@ -3,26 +3,32 @@
 #include <time.h>
 #include "list.h"
 
-void List_Show(int arr[], int size, enum Direction dir) {
+void List_Show(int arr[], int size, enum DirectionType dirType) {
 
     if(arr == NULL) {
         printf("[Warning]: Array is NULL");
         return;
     }
 
-    enum Direction v = Vertical;
-    enum Direction h = Horizontal;
-    
-    if(dir == v) {
-        for (int i = 0; i < size; i++) {
-            printf("Arr[%d] = %d\n", i, arr[i]);
-        }
-    }
-    else if (dir == h) {
-        printf("Arr[]: ");
-        for (int i = 0; i < size; i++) {
-            printf("%d ", arr[i]);
-        }
+    switch (dirType) {
+
+        case Vertical: {
+            for (int i = 0; i < size; i++) {
+                printf("Arr[%d] = %d\n", i, arr[i]);
+            }
+        } break;
+
+        case Horizontal: {
+            printf("Arr[]: ");
+            for (int i = 0; i < size; i++) {
+                printf("%d ", arr[i]);
+            }
+        } break;
+
+        default: {
+            printf("[Warning]: Unknown seqType: %d\n", dirType);
+        } break;
+
     }
 
     puts("\n");

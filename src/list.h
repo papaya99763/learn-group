@@ -6,9 +6,9 @@
 #include "../src/globalDef.hpp"
 
 enum SequenceType { Increase = 0, Decrease = 1 };
-enum Direction { Vertical = 0, Horizontal = 1 };
+enum DirectionType { Vertical = 0, Horizontal = 1 };
 
-void List_Show(int arr[], int size, enum Direction dir);
+void List_Show(int arr[], int size, enum DirectionType dirType);
 
 int* List_Create(int size, int initValue);
 
