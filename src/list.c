@@ -213,6 +213,8 @@ int* List_Join(int arr[], int a_size, int brr[], int b_size, int *result_size) {
     return crr;
 }
 
+// ==== Algorithm ======================
+
 void List_Sort_BubbleSort(int arr[], int size, int seqType) {
     int tmp;
     for (int i = 0; i < size - 1; i++) {
@@ -237,6 +239,7 @@ void List_Sort_BubbleSort(int arr[], int size, int seqType) {
         }
     }
 }
+
 
 // =====================================
 

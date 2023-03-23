@@ -46,6 +46,8 @@ int* List_Remove_Index(int arr[], int *size, int idx);
 
 int* List_Join(int arr[], int a_size, int brr[], int b_size, int *result_size);
 
+// ==== Algorithm ======================
+
 void List_Sort_BubbleSort(int arr[], int size, int seqType);
 
 // =====================================
