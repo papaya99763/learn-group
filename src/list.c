@@ -158,13 +158,25 @@ int* List_Append(int arr[], int *size, int value) {
     return brr;
 }
 
-int* List_Remove(int arr[], int *size, int value) {
-    int newSize = *size - 1;
-    int *brr = List_Create(newSize, 0);
-    if (brr == NULL) return NULL;
+int* List_Remove_Value(int arr[], int *size, int value) {
 
     int idx = List_Find(arr, *size, value);
     if(idx == -1) return NULL;
+
+    int newSize = *size - 1;
+    int *brr = List_Remove_Index(arr, size, idx);
+    if (brr == NULL) return NULL;
+
+    return brr;
+}
+
+int* List_Remove_Index(int arr[], int *size, int idx) {
+
+    if(idx < 0 || idx >= *size) return NULL;
+
+    int newSize = *size - 1;
+    int *brr = List_Create(newSize, 0);
+    if (brr == NULL) return NULL;
 
     for (int i = 0, j = 0; i < *size; i++, j++) {
         if(i == idx) {

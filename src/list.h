@@ -38,7 +38,9 @@ int* List_Insert(int arr[], int *size, int idx, int value);
 
 int* List_Append(int arr[], int *size, int value);
 
-int* List_Remove(int arr[], int *size, int value);
+int* List_Remove_Value(int arr[], int *size, int value);
+
+int* List_Remove_Index(int arr[], int *size, int idx);
 
 // =====================================
 
