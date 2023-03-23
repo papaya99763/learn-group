@@ -5,7 +5,9 @@
 
 #include "../src/globalDef.hpp"
 
+enum SequenceType { Increase = 0, Decrease = 1 };
 enum Direction { Vertical = 0, Horizontal = 1 };
+
 void List_Show(int arr[], int size, enum Direction dir);
 
 int* List_Create(int size, int initValue);
@@ -44,6 +46,8 @@ int* List_Remove_Index(int arr[], int *size, int idx);
 
 int* List_Join(int arr[], int a_size, int brr[], int b_size, int *result_size);
 
+void List_Sort_BubbleSort(int arr[], int size, int seqType);
+
 // =====================================
 
 bool At(int arr[], int size, int idx, int *result);
@@ -59,8 +63,6 @@ bool Append(int arr[], int size, int value);
 bool Invert(int arr[], int size);
 
 bool Join(int ori[], int ori_size, int join[], int join_size);
-
-enum SortType { ToMax = 0, ToMin = 1 };
 
 bool Sort(int arr[], int size, int type);
 

@@ -207,6 +207,31 @@ int* List_Join(int arr[], int a_size, int brr[], int b_size, int *result_size) {
     return crr;
 }
 
+void List_Sort_BubbleSort(int arr[], int size, int seqType) {
+    int tmp;
+    for (int i = 0; i < size - 1; i++) {
+        for (int j = 0; j < size - i - 1; j++) {
+            switch (seqType) {
+
+                case Increase: {
+                    if(arr[j] >= arr[j+1]) 
+                        SWAP(arr[j], arr[j+1], tmp);
+                } break;
+
+                case Decrease: {
+                    if(arr[j] <= arr[j+1]) 
+                        SWAP(arr[j], arr[j+1], tmp);
+                } break;
+
+                default: {
+                    printf("[Warning]: Unknown seqType: %d\n", seqType);
+                } break;
+
+            }
+        }
+    }
+}
+
 // =====================================
 
 bool At(int arr[], int size, int idx, int *result) {
