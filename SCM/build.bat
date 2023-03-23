@@ -95,21 +95,58 @@ if %errCode% EQU 0 (
     goto :End
 )
 
+ECHO .
+ECHO .
+ECHO .
+
 :Start_Program
 ::**************************************
-ECHO [%target%]: Start
+ECHO.
+ECHO ***********************************
+ECHO            Start Program           
+ECHO ***********************************
+
+ECHO.
+ECHO 1. Arguments
+ECHO -----------------------------------
+ECHO - Null
+ECHO - NUll
+
+ECHO.
+ECHO 2. Main Program [%target%] Log
 ECHO -----------------------------------
 ECHO.
 %tgt_name%.exe
+
 ECHO.
+ECHO.
+ECHO 3. Program Return
 ECHO -----------------------------------
 SET errCode=%ERRORLEVEL%
-SET errStr=
-if %errCode% EQU 0 ( 
-    ECHO "Program Return: %errCode%  ( NoError )"
+ECHO return %errCode%
+
+ECHO.
+ECHO ============= [Stop] ==============
+ECHO ***********************************
+
+if %errCode% EQU 0 (
+    ECHO "[ ----------- Done ------------ ]"
     ECHO.
+    goto :End
+) else if %errCode% EQU -1073741819 (
+    ECHO.
+    ECHO "[ ----------- Error ----------- ]"
+    ECHO "|> Return Code (-1073741819)"
+    ECHO "|> [Info]: Type Incompatible !!! "
+    ECHO "[ ----------- ***** ----------- ]"
+    ECHO.
+    goto :End
 ) else (
-    ECHO "Program Return: %errCode% ( Error )"
+    ECHO.
+    ECHO "[ ----------- Error ----------- ]"
+    ECHO "|> Return Code (%errCode%)"
+    ECHO "|> [Info]: Unknown ... "
+    ECHO "[ ----------- ***** ----------- ]"
     ECHO.
     goto :End
 )
