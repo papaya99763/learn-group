@@ -190,6 +190,23 @@ int* List_Remove_Index(int arr[], int *size, int idx) {
     return brr;
 }
 
+int* List_Join(int arr[], int a_size, int brr[], int b_size, int *result_size) {
+    *result_size = a_size + b_size;
+    int *crr = List_Create(*result_size, 0);
+    if (crr == NULL) return NULL;
+
+    int idx = 0;
+
+    for (int i = 0; i < a_size; i++, idx++) {
+        crr[idx] = arr[i];
+    }
+    for (int i = 0; i < b_size; i++, idx++) {
+        crr[idx] = brr[i];
+    }
+
+    return crr;
+}
+
 // =====================================
 
 bool At(int arr[], int size, int idx, int *result) {

@@ -42,6 +42,8 @@ int* List_Remove_Value(int arr[], int *size, int value);
 
 int* List_Remove_Index(int arr[], int *size, int idx);
 
+int* List_Join(int arr[], int a_size, int brr[], int b_size, int *result_size);
+
 // =====================================
 
 bool At(int arr[], int size, int idx, int *result);
