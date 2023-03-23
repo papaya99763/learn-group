@@ -124,7 +124,6 @@ int List_Find(int arr[], int size, int value) {
     return -1; // Not found
 }
 
-// Undone: 
 int* List_Insert(int arr[], int *size, int idx, int value) {
     int newSize = *size + 1;
     int *brr = List_Create(newSize, 0);
@@ -137,9 +136,10 @@ int* List_Insert(int arr[], int *size, int idx, int value) {
     }
     brr[idx] = value;
     for (int i = idx; i < *size; i++) {
-        brr[i] = arr[i-1];
+        brr[i+1] = arr[i];
     }
 
+    *size = newSize;
     return brr;
 }
 
