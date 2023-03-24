@@ -1,7 +1,6 @@
 # Target File
 *.history
 demo/*.c
-!demo/program.c
 
 # Prerequisites
 *.d
